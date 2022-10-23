@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+	#load {
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background: url(images/ajax-loader.gif);
+	width: 43px;
+	height: 11px;
+	text-indent: -9999em;
+	}
+	
+	#username
+	{
+	padding-top:12px;
+    }
+	
+	#adminusername
+	{
+	padding-top:12px;
+    }
+

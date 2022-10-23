@@ -1,0 +1,61 @@
+
+	public function send_sms_for_not_submited_attendance()
+	{
+//	$today_date = date("Y-m-d");
+//	$schools_array = array();
+//	$schools_array_col = array();
+	$final_data = array();
+//	$query = $this->mongo_db->select ( array (
+//			"doc_data.widget_data.page1.Attendence Details.Select School"
+//	) )->whereLike ( 'history.last_stage.time', $today_date )->get ( $this->absent_app_col );
+//	
+//	foreach ($query as  $school_names) {
+//		$school_name = $school_names['doc_data']['widget_data']['page1']['Attendence Details']['Select School'];
+//		array_push($schools_array, $school_name);
+//	}
+//	$this->mongo_db->switchDatabase ( $this->common_db ['common_db'] );
+//	$res = $this->mongo_db->select(array('school_name'))->get($this->collections['panacea_schools']);
+//	$this->mongo_db->switchDatabase ( $this->common_db ['dsn'] );
+//	foreach ($res as $school) {
+//		$school_name_col = $school['school_name'];
+//		array_push($schools_array_col, $school_name_col);
+//	}
+//	$final_result = array_values(array_diff($schools_array_col, $schools_array));
+//		foreach ($final_result as $school_name) 
+		{
+//			$this->mongo_db->switchDatabase ( $this->common_db ['common_db'] );
+			$pc_result = $this->mongo_db->select(array('school_code','school_mob','contact_person_name'))->get($this->collections['panacea_schools']);
+			$this->mongo_db->switchDatabase ( $this->common_db ['dsn'] );
+
+			foreach ($pc_result as $school_code)
+			{
+				$this->mongo_db->switchDatabase ( $this->common_db ['common_db'] );
+				$hs_result = $this->mongo_db->select(array('hs_name', 'hs_mob', 'email'))->
+				where(array('school_code' => $school_code['school_code']))->get($this->collections['panacea_health_supervisors']);
+				$this->mongo_db->switchDatabase ( $this->common_db ['dsn'] );
+
+				$rhso_email = explode(".", $hs_result[0]['email']);
+				$email = $rhso_email[0].".rhso@gmail.com";
+
+				$this->mongo_db->switchDatabase ( $this->common_db ['common_db'] );
+				$rhso_result = $this->mongo_db->select(array('rhso_name', 'rhso_mobile'))->
+				where(array('email' => $email))->get('rhso_users');
+				$this->mongo_db->switchDatabase ( $this->common_db ['dsn'] );
+				if(isset($rhso_result[0]['rhso_name']))
+				{
+					$data['rhso_name'] = $rhso_result[0]['rhso_name'];
+					$data['rhso_mobile'] = $rhso_result[0]['rhso_mobile'];
+					$data['hs_name'] = $hs_result[0]['hs_name'];
+					$data['hs_mob'] = $hs_result[0]['hs_mob'];
+					$data['pc_name'] = $school_code['contact_person_name'];
+					$data['pc_mob'] = $school_code['school_mob'];
+					//$data['school_name'] = $school_name;
+					
+					array_push($final_data, $data);
+				}	
+			}
+			
+		}
+		
+		return $final_data;		
+	}

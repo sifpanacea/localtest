@@ -1,0 +1,70 @@
+/*body
+{
+display:none;
+}
+#pdf
+{
+display:block;
+}*/
+
+html, body 
+{
+	height: auto;
+}
+head
+{
+display:none;
+}
+.for_button
+{
+display:none;
+}
+#header 
+{
+display:none;
+}
+#logo
+{
+	display:none;
+}
+#left-panel 
+{
+	display:none;
+}
+#main
+{
+	display:none;
+}
+.inbox_addd
+{
+display:none;
+}
+#left-panel
+{
+display:none;
+}
+#ribbon
+{
+display:none;
+}
+#printingg
+{
+display:none;
+}
+nav
+{
+display:none;
+}
+.print_delete
+{
+	display:none;
+}
+
+#print_final
+{
+	display:block;
+	height:297mm; 
+	width:210mm; 
+	margin-left:auto; 
+	margin-right:auto;
+}

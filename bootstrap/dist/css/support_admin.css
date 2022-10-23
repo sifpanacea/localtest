@@ -1,0 +1,52 @@
+.inbox-data-date
+{
+width:138px;
+}
+span.label
+{
+display:inline-block;
+min-width:60px;
+margin-right:20px;
+}
+.attach
+{
+margin-right:0px;
+}
+
+.inbox-empty
+{
+min-height:80px;
+font-size:20px;
+}
+.inbox-info
+{
+margin-left:350px;
+margin-top:18px;
+}
+.inbox-info-bar .row
+{
+margin-left:0px;
+}
+.attach .row
+{
+margin-left:-13px;
+}
+.log_para
+{
+	word-wrap: break-word;
+}
+.email-infobox
+{
+	width: 230px;
+	border-bottom:none;
+}
+.log-empty
+{
+min-height:80px;
+font-size:20px;
+}
+.log-info
+{
+margin-left:500px;
+margin-top:18px;
+}

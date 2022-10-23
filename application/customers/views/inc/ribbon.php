@@ -1,0 +1,59 @@
+<!-- RIBBON -->
+	<div id="ribbon">
+	
+		<span class="ribbon-button-alignment"> <span id="refresh" class="btn btn-ribbon" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true"><i class="fa fa-refresh"></i></span> </span>
+	
+		<!-- breadcrumb -->
+		<ol class="breadcrumb">
+			<?php
+				foreach ($breadcrumbs as $display => $url) {
+					$breadcrumb = $url != "" ? '<a href="'.$url.'">'.$display.'</a>' : $display;
+					echo '<li>'.$breadcrumb.'</li>';
+				}
+				echo '<li>'.$page_title.'</li>';
+			?>
+		</ol>
+		<div class="pull-right btn-group dropdown dropdown-large">
+													<button class="btn dropdown-toggle btn-xs btn-default btn-circle" data-toggle="dropdown" style="margin-top:5px;">
+										 <i class="fa fa-question"></i>
+									</button>
+													<ul class="dropdown-menu">
+														<li class="dropdown-header">
+												Apps
+											</li>
+														<li>
+															<a href="<?php echo URL."help/user_fill_forms"?>"><span><i class="icon-leaf"></i> Filling Forms</span></a>
+														</li>
+														<li class="divider"></li>
+														<li class="dropdown-header">
+												Docs
+											</li>
+														<li>
+															<a href="<?php echo URL."help/user_access_documents"?>"><span><i class="icon-leaf"></i> Accessing Documents </span></a>
+														</li>
+														<li>
+															<a href="<?php echo URL."help/user_view_documents"?>"><span><i class="icon-leaf"></i> Viewing Documents </span></a>
+														</li>
+														<li>
+															<a href="<?php echo URL."help/user_edit_documents"?>"><span><i class="icon-leaf"></i> Editing Documents </span></a>
+														</li>
+														<li>
+															<a href="<?php echo URL."help/user_search_documents"?>"><span><i class="icon-leaf"></i> Searching Documents </span></a>
+														</li>
+														<li>
+															<a href="<?php echo URL."help/user_delete_documents"?>"><span><i class="icon-leaf"></i> Deleting Documents </span></a>
+														</li>
+														<li class="divider"></li>
+														<li>
+															<a href="<?php echo URL."help/user_edit_profile"?>"><span><i class="icon-leaf"></i> Editing Profile </span></a>
+														</li>
+														<li>
+															<a href="<?php echo URL."help/user_change_password"?>"><span><i class="icon-leaf"></i> Changing Password </span></a>
+														</li>
+													</ul>
+												</div><!-- /btn-group -->
+		<!-- end breadcrumb -->
+	
+	
+	</div>
+	<!-- END RIBBON -->

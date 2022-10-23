@@ -1,0 +1,20 @@
+
+
+
+.content {
+	display: block;
+	width: 1347px;
+	background: rgb(215, 215, 215);
+	padding: 1em;
+	overflow: hidden;
+	margin: 0 auto;
+
+}
+.content *{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+	font-size:large;
+	font-family:serif, "Helvetica Neue", Helvetica, sans-serif;
+}

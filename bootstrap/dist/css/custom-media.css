@@ -1,0 +1,99 @@
+	#header
+	{
+		margin-top: 0px;
+		height: 95px;
+	}
+	.logo_1
+	{
+		width: 75px;height:80px;margin-top:6px;margin-left:6px;
+	}
+	.logo_2
+	{
+		width: 75px;height:90px;margin-top:6px;margin-left:6px;
+	}
+	#hide-menu
+	{
+		display:none;
+	}
+	#logout
+	{
+		display:none;
+	}
+	.logo_3
+	{
+		display:none;
+	}
+	#header>.project-title
+	{
+		display:none;
+	}
+	.typearea textarea {
+    overflow: scroll!important;
+	}
+	@media only screen and (max-width: 800px) {
+	   #header
+		{
+			height: 83px;
+		}
+		.logo_1
+		{
+			width: 50px;height:50px;margin-top:6px;margin-left:6px;
+		}
+		.logo_2
+		{
+			width: 40px;height: 57px;margin-top:6px;margin-left:6px;
+		}
+		.logo_3
+		{
+			display:inline-block;width: 60px;height:60px;margin-left:6px;
+		}
+		#header>.panacea-custom-title
+		{
+			display:none;
+		}
+		#hide-menu
+		{
+			display:inline-block;
+		}
+		#logout
+		{
+			display:inline-block;
+		}
+		.right_logo
+		{
+			display:none;
+		}
+		.project-title
+		{
+			display:block!important;
+			width:100%;
+			height:30px!important;
+		}
+		.project-title>p
+		{
+			margin:0px;
+			margin-top:14px;
+			text-align:center;
+			font-weight: bolder;
+		}
+		.partner_info
+		{
+			display:none;
+		}
+		.table-responsive
+		{
+		    overflow-x: scroll;
+		}
+	}
+	@media only screen and (max-width: 500px) and (min-width: 480px) {
+	.jarviswidget>header .h2title
+		{
+			margin-top:-16px;
+		}
+	}
+	@media only screen and (max-width: 422px) {
+		.jarviswidget>header .h2title
+			{
+				margin-top:-16px;
+			}
+	}
